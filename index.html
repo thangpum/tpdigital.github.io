@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Digital | App Developer</title>
+    <title>TP Digital | Developer Portfolio</title>
     <style>
         :root {
             --bg: #ffffff;
@@ -15,87 +15,108 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.5;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+        
+        /* Studio Banner Section */
+        .banner {
+            width: 100%;
+            height: 300px;
+            background: #2c2c2e url('tp_banner.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Studio Icon - Overlapping the banner */
+        .brand-container {
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            margin-top: -60px; /* Pulls icon up into banner */
+            margin-bottom: 40px;
+        }
+
+        .studio-icon {
+            width: 120px;
+            height: 120px;
+            background: white url('tp_icon.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 28px; /* App-style rounded corners */
+            border: 5px solid white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
         .container {
             max-width: 800px;
             width: 90%;
-            padding: 80px 0;
+            padding-bottom: 80px;
         }
-        header { margin-bottom: 60px; }
-        h1 { font-size: 48px; font-weight: 700; margin: 0; letter-spacing: -0.5px; }
-        p.subtitle { font-size: 21px; color: var(--secondary); margin-top: 10px; }
+
+        header h1 { font-size: 42px; font-weight: 800; margin: 20px 0 5px; letter-spacing: -1px; }
+        .subtitle { font-size: 20px; color: var(--secondary); margin-bottom: 40px; }
         
-        .section-title { font-size: 24px; font-weight: 600; margin: 40px 0 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .section-title { font-size: 22px; font-weight: 600; margin: 40px 0 20px; border-bottom: 1px solid #f2f2f7; padding-bottom: 10px; }
         
         .project-card {
             background: #f5f5f7;
             padding: 24px;
-            border-radius: 18px;
-            margin-bottom: 20px;
-            transition: transform 0.2s ease;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
         }
-        .project-card:hover { transform: scale(1.02); }
-        .project-title { font-size: 20px; font-weight: 600; margin: 0; }
-        .project-desc { color: var(--secondary); margin: 8px 0 16px; }
-        .tag {
-            font-size: 12px;
-            background: #e8e8ed;
-            padding: 4px 10px;
-            border-radius: 12px;
-            margin-right: 5px;
-            text-transform: uppercase;
-        }
-
-        footer { margin-top: 60px; font-size: 14px; color: var(--secondary); text-align: center; padding-bottom: 40px; }
-        a { color: var(--accent); text-decoration: none; }
+        .project-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .project-title { font-size: 20px; font-weight: 700; margin: 0; }
+        .project-desc { color: var(--secondary); margin: 10px 0; font-size: 16px; }
+        
+        .footer-links { margin-top: 50px; text-align: center; border-top: 1px solid #f2f2f7; padding-top: 30px; }
+        a { color: var(--accent); text-decoration: none; font-weight: 500; }
         a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="banner"></div>
+
+    <div class="brand-container">
+        <div class="studio-icon"></div>
         <header>
             <h1>TP Digital</h1>
-            <p class="subtitle">Independent App & Game Developer</p>
+            <p class="subtitle">Crafting immersive mobile experiences.</p>
         </header>
+    </div>
 
-        <h2 class="section-title">Projects</h2>
+    <div class="container">
+        <h2 class="section-title">Games & Apps</h2>
 
         <div class="project-card">
             <h3 class="project-title">UFO Drift: Velocity</h3>
-            <p class="project-desc">A high-speed mobile game featuring precision drifting mechanics and stylized graphics.</p>
-            <span class="tag">Mobile Game</span> <span class="tag">Flutter</span>
+            <p class="project-desc">A precision-based drifting game featuring sleek UFO mechanics and high-speed challenges.</p>
         </div>
 
         <div class="project-card">
             <h3 class="project-title">Biakna Labu</h3>
-            <p class="project-desc">A digital worship songbook application designed for a seamless spiritual experience.</p>
-            <span class="tag">Utility</span> <span class="tag">Flutter</span>
+            <p class="project-desc">A comprehensive digital worship songbook app designed for the community.</p>
         </div>
 
         <div class="project-card">
             <h3 class="project-title">Star Bloom</h3>
-            <p class="project-desc">An experimental game project exploring interactive environments and growth mechanics.</p>
-            <span class="tag">Game</span> <span class="tag">VS Code</span>
+            <p class="project-desc">An artistic exploration of growth and environment through interactive mobile gameplay.</p>
         </div>
 
-        <h2 class="section-title">Connect</h2>
-        <p>I build with Flutter, Git, and VS Code. Based in Shillong.</p>
-        <p>
-            <a href="https://github.com/thangpum">GitHub</a> &bull; 
-            <a href="mailto:your-email@example.com">Contact</a> &bull;
-            <a href="/app-ads.txt">Ad Spec</a>
-        </p>
-
-        <footer>
-            &copy; 2026 TP Digital Built with GitHub Pages.
-        </footer>
+        <div class="footer-links">
+            <p>
+                <a href="mailto:your-email@example.com">Support</a> &bull; 
+                <a href="https://github.com/thangpum">GitHub</a> &bull; 
+                <a href="/app-ads.txt">App-Ads.txt</a>
+            </p>
+            <p style="font-size: 13px; color: #86868b; margin-top: 20px;">
+                &copy; 2026 TP Digital. Based in Shillong.
+            </p>
+        </div>
     </div>
 
 </body>
