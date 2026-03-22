@@ -10,7 +10,19 @@
             --text: #1d1d1f;
             --accent: #0071e3;
             --secondary: #86868b;
+            --card-bg: #f5f5f7;
         }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000000;
+                --text: #f5f5f7;
+                --accent: #0a84ff;
+                --secondary: #a1a1a6;
+                --card-bg: #1c1c1e;
+            }
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
@@ -36,7 +48,7 @@
             max-width: 800px;
             width: 90%;
             position: relative;
-            margin-top: -60px; /* Pulls icon up into banner */
+            margin-top: -60px;
             margin-bottom: 40px;
         }
 
@@ -45,7 +57,7 @@
             height: 120px;
             background: white url('tp_icon.png') no-repeat center center;
             background-size: cover;
-            border-radius: 28px; /* App-style rounded corners */
+            border-radius: 28px;
             border: 5px solid white;
             box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
@@ -59,22 +71,45 @@
         header h1 { font-size: 42px; font-weight: 800; margin: 20px 0 5px; letter-spacing: -1px; }
         .subtitle { font-size: 20px; color: var(--secondary); margin-bottom: 40px; }
         
-        .section-title { font-size: 22px; font-weight: 600; margin: 40px 0 20px; border-bottom: 1px solid #f2f2f7; padding-bottom: 10px; }
+        .section-title { font-size: 22px; font-weight: 600; margin: 40px 0 20px; border-bottom: 1px solid var(--card-bg); padding-bottom: 10px; }
         
         .project-card {
-            background: #f5f5f7;
-            padding: 24px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 24px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .project-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .project-title { font-size: 20px; font-weight: 700; margin: 0; }
-        .project-desc { color: var(--secondary); margin: 10px 0; font-size: 16px; }
+        .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .project-title { font-size: 24px; font-weight: 700; margin: 0; }
+        .project-desc { color: var(--secondary); margin: 12px 0; font-size: 17px; line-height: 1.5; }
         
-        .footer-links { margin-top: 50px; text-align: center; border-top: 1px solid #f2f2f7; padding-top: 30px; }
+        .play-store-badge {
+            height: 50px;
+            margin-top: 15px;
+            margin-left: -8px; 
+            transition: opacity 0.2s;
+        }
+        .play-store-badge:hover { opacity: 0.8; }
+
+        .tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            background: #e8e8ed;
+            color: #86868b;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .footer-links { margin-top: 60px; text-align: center; border-top: 1px solid var(--card-bg); padding-top: 40px; }
+        .footer-links p { margin: 10px 0; }
         a { color: var(--accent); text-decoration: none; font-weight: 500; }
         a:hover { text-decoration: underline; }
+
+        .policy-section { margin-top: 25px; padding: 15px; background: var(--card-bg); border-radius: 12px; }
+        .policy-links a { font-size: 14px; margin: 0 10px; color: var(--secondary); display: inline-block; padding: 5px 0; }
     </style>
 </head>
 <body>
@@ -94,17 +129,23 @@
 
         <div class="project-card">
             <h3 class="project-title">UFO Drift: Velocity</h3>
-            <p class="project-desc">A precision-based drifting game featuring sleek UFO mechanics and high-speed challenges.</p>
-
-
-<iframe frameborder="0" src="https://itch.io/embed/4290672" width="552" height="167"><a href="https://tpdigital.itch.io/ufo-drift-velocity">UFO Drift: Velocity by tpdigital</a></iframe>
-
+            <p class="project-desc">A precision-based drifting game featuring sleek UFO mechanics, cosmic environments, and high-speed challenges.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.UFODriftStudio.UFODrift" target="_blank">
+                <img class="play-store-badge" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
+            </a>
         </div>
 
-        <!-- <div class="project-card">
-            <h3 class="project-title">Labute</h3>
-            <p class="project-desc">A collection of worship and devotional song lyrics in Paite.</p>
-        </div> -->
+        <div class="project-card">
+            <h3 class="project-title">Jiggle Timer</h3>
+            <p class="project-desc">A tactile, reliable countdown timer designed for focus. Features haptic feedback and a minimalist interface for daily productivity.</p>
+            <span class="tag">Coming Soon to Play Store</span>
+        </div>
+
+        <div class="project-card">
+            <h3 class="project-title">Simple Notes</h3>
+            <p class="project-desc">A lightweight, distraction-free note-taking app designed for quick ideas and organized thoughts.</p>
+            <span class="tag">In Development</span>
+        </div>
 
         <div class="footer-links">
             <p>
@@ -112,8 +153,18 @@
                 <a href="https://github.com/thangpum">GitHub</a> &bull; 
                 <a href="/app-ads.txt">Ad Spec</a>
             </p>
-            <p style="font-size: 13px; color: #86868b; margin-top: 20px;">
-                &copy; 2026 TP Digital.
+            
+            <div class="policy-section">
+                <strong style="display: block; margin-bottom: 8px; font-size: 14px;">Privacy Policies</strong>
+                <div class="policy-links">
+                    <a href="/privacy-simplenotes.html">Simple Notes</a>
+                    <a href="/jiggle-timer-privacy.html">Jiggle Timer</a>
+                    <a href="/ufo-drift-privacy.html">UFO Drift: Velocity</a>
+                </div>
+            </div>
+
+            <p style="font-size: 13px; color: var(--secondary); margin-top: 30px;">
+                &copy; 2026 TP Digital | Shillong, India.
             </p>
         </div>
     </div>
